@@ -1,0 +1,75 @@
+<section class="menu_dstop">
+	<h1>
+		<a href="index.html"><img src="imgs/logo_congreso.png" alt="LogoCongreso" title="5to Congreso de Autismo"></a>
+	</h1>
+	<nav>
+		<ul>
+			<li><a class="cambio pag_actual" href="index.html" data-seccion="index">Inicio</a></li>
+			<li><a class="cambio" href="ponentes.html" data-seccion="ponentes">Ponentes</a></li>
+			<li><a class="cambio" href="calendario.html" data-seccion="calendario">Calendario</a></li>
+			<li><a class="cambio" href="cd_blanca.html" data-seccion="cd_blanca">Ciudad Blanca</a></li>
+			<li><a class="cambio" href="costos.html" data-seccion="costos">Costos</a></li>
+			<li><a class="cambio" href="contacto.html" data-seccion="contacto">Contacto</a></li>
+		</ul>
+	</nav>
+</section>
+
+<section class="menu_movil"> <!-- MENU MOVIL desplegable-->
+	<section id='menu_fijo'> 
+		<h1><a href="index.html"><img src="imgs/logo_congreso.png" alt="LogoCongreso" title="5to Congreso de Autismo"></a></h1>
+		<div  class="" ><img id='btn_menu' class="" src='imgs/btn_menu.png' alt=''></div>
+	</section>	
+	<article id="menu_dspg">
+			<div class=""><a class="cambio pag_actual" href="index.html" data-seccion="index">Inicio</a></div>
+			<div class=""><a class="cambio" href="ponentes.html" data-seccion="ponentes">Ponentes</a></div>
+			<div class=""><a class="cambio" href="calendario.html" data-seccion="calendario">Calendario</a></div>
+			<div class=""><a class="cambio" href="cd_blanca.html" data-seccion="cd_blanca">Ciudad Blanca</a></div>
+			<div class=""><a class="cambio" href="costos.html" data-seccion="costos">Costos</a></div>
+			<div class=""><a class="cambio" href="contacto.html" data-seccion="contacto">Contacto</a></a></div>
+	</article>
+</section>
+
+<script>
+	function enQueSeccionEstoy()
+	{
+		var url = window.location.href;		
+
+		if(/index.html/.test(url))
+		{
+			$("a[data-seccion='index']").addClass("pag_actual");			
+		}
+		else if(/ponentes.html/.test(url))
+		{
+			$("a[data-seccion='ponentes']").addClass("pag_actual");
+			$("a[data-seccion='index']").removeClass("pag_actual");			
+		}
+		else if(/calendario.html/.test(url))
+		{
+			$("a[data-seccion='calendario']").addClass("pag_actual");
+			$("a[data-seccion='index']").removeClass("pag_actual");			
+		}
+		else if (/cd_blanca.html/.test(url))
+		{
+			$("a[data-seccion='cd_blanca']").addClass("pag_actual");
+			$("a[data-seccion='index']").removeClass("pag_actual");			
+		}
+		else if (/costos.html/.test(url))
+		{
+			$("a[data-seccion='costos']").addClass("pag_actual");
+			$("a[data-seccion='index']").removeClass("pag_actual");			
+		}
+		else if (/contacto.html/.test(url))
+		{
+			$("a[data-seccion='contacto']").addClass("pag_actual");
+			$("a[data-seccion='index']").removeClass("pag_actual");			
+		}
+
+		$("#btn_menu").on("click",function(){
+		$("#menu_dspg").toggle();
+		// alert("sss");
+		
+	});
+
+	}
+	enQueSeccionEstoy();
+</script>
